@@ -10,4 +10,7 @@ public class MinitaskapiApplication {
 		SpringApplication.run(MinitaskapiApplication.class, args);
 	}
 
+
+
+
 }
