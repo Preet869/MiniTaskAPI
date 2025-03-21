@@ -12,4 +12,5 @@ interface taskRepository extends JpaRepository<Task, Integer> {
     Optional<Object> findById(Long id);
 
     void deleteById(Long id);
+
 }

@@ -2,15 +2,14 @@ package com.example.minitaskapi;
 import java.util.List;
 import java.util.Optional;
 
-
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/tasks")
 public class TaskController {
     private taskRepository taskRepository;
@@ -27,8 +26,6 @@ public class TaskController {
     public Task createTask(@RequestBody Task task) {
         return taskRepository.save(task);
     }
-
-
     @DeleteMapping("/{id}")
     @Transactional // Add this annotation
     public ResponseEntity<String> deleteTask(@PathVariable Long id) {
@@ -45,6 +42,7 @@ public class TaskController {
             return ResponseEntity.internalServerError().body("Delete failed: " + e.getMessage()); // 500 Internal Server Error
         }
     }
+
     @PutMapping("/{id}")
     public Task updateTask(@PathVariable Long id, @RequestBody Task updatedTask) {
         if (taskRepository.findById(id).isPresent()) {
