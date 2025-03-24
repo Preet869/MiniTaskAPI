@@ -22,6 +22,13 @@ function App() {
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
       </label>
       <button onClick={addTask}>Add Task</button>
+      <ul>
+       {tasks.map ( task =>
+        <li key = {task.id}>
+        {task.title}
+        </li>
+        )}
+      </ul>
     </div>
   );
 }
