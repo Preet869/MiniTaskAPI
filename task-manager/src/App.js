@@ -11,7 +11,12 @@ function App() {
       completed: false
     };
     setTasks([...tasks, newTask]);
-    setTitle("");
+    setTitle(" ");
+  }
+
+
+  function deleteTask(id) {
+       setTasks(tasks.filter(task => task.id !== id))
   }
 
   return (
@@ -24,10 +29,12 @@ function App() {
       <button onClick={addTask}>Add Task</button>
       <ul>
        {tasks.map ( task =>
-        <li key = {task.id}>
+        <li key = {task.id}> &nbsp;
         {task.title}
+         <button onClick={() => deleteTask(task.id)}>Delete</button>
         </li>
         )}
+
       </ul>
     </div>
   );
