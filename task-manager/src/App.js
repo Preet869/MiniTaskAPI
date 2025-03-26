@@ -67,7 +67,7 @@ function App() {
  return (
      <div className="app-wrapper">
          <header className="app-header">
-             <h1>Task Manager</h1>
+             <h1>To Do List</h1>
          </header>
          <main className="app-main">
              <div className="input-group">
