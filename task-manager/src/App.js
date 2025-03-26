@@ -64,47 +64,55 @@ function App() {
       fetch('http://localhost:8081/tasks/' + id, { method: 'DELETE' }).then(() => fetch('http://localhost:8081/tasks')).then(response => response.json()).then(data => setTasks(data))
     }
 
-  return (
-    <div className="app-container">
-      <h1>TODO List</h1>
-      <div className="input-group">
-      <label htmlFor="task-input">Add Task</label>
-      <input id="task-input" value={title} onChange={(e) => setTitle(e.target.value)} />
-      <button onClick={addTask}>Add Task</button>
-      </div>
-      <ul className="task-list">
-      {tasks
-          .slice() // Create a copy to avoid mutating state directly
-          .sort((a, b) => a.completed - b.completed)
-          .map(task => (
-              <li key={task.id}>
-                  <div className="task-item">
-                      <input
-                          type="checkbox"
-                          checked={task.completed}
-                          onChange={() => toggleCompleted(task.id, task.completed)}
-                      />
-                      {editingId === task.id ? (
-                          <input
-                              value={editTitle}
-                              onChange={(e) => setEditTitle(e.target.value)}
-                          />
-                      ) : (
-                          <span className={task.completed ? "completed" : ""}>
-                              {task.title}
-                          </span>
-                      )}
-                      <button onClick={() => deleteTask(task.id)}>Delete</button>
-                      {editingId === task.id ? (
-                          <button onClick={() => saveEdit(task.id)}>Save</button>
-                      ) : (
-                          <button onClick={() => startEdit(task)}>Edit</button>
-                      )}
-                  </div>
-              </li>
-          ))}
-      </ul>
-    </div>
-  );
+ return (
+     <div className="app-wrapper">
+         <header className="app-header">
+             <h1>Task Manager</h1>
+         </header>
+         <main className="app-main">
+             <div className="input-group">
+                 <input
+                     id="task-input"
+                     value={title}
+                     onChange={(e) => setTitle(e.target.value)}
+                     placeholder="Add a new task"
+                 />
+                 <button onClick={addTask}>Add Task</button>
+             </div>
+             <div className="task-list">
+                 {tasks.length === 0 ? (
+                     <p className="no-tasks">No tasks yet—add one!</p>
+                 ) : (
+                     tasks.map(task => (
+                         <div key={task.id} className="task-card">
+                             <input
+                                 type="checkbox"
+                                 checked={task.completed}
+                                 onChange={() => toggleCompleted(task.id, task.completed)}
+                             />
+                             {editingId === task.id ? (
+                                 <input
+                                     className="edit-input"
+                                     value={editTitle}
+                                     onChange={(e) => setEditTitle(e.target.value)}
+                                 />
+                             ) : (
+                                 <span className={task.completed ? "completed" : ""}>{task.title}</span>
+                             )}
+                             <div className="task-actions">
+                                 <button onClick={() => deleteTask(task.id)}>Delete</button>
+                                 {editingId === task.id ? (
+                                     <button onClick={() => saveEdit(task.id)}>Save</button>
+                                 ) : (
+                                     <button onClick={() => startEdit(task)}>Edit</button>
+                                 )}
+                             </div>
+                         </div>
+                     ))
+                 )}
+             </div>
+         </main>
+     </div>
+ );
 }
 export default App;
