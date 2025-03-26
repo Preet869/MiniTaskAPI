@@ -9,13 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000/")
 @RequestMapping("/tasks")
 public class TaskController {
-    private taskRepository taskRepository;
+    private TaskRepository taskRepository;
 
     @Autowired
-    public TaskController(taskRepository taskRepository) {
+    public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
     @GetMapping
@@ -50,11 +50,10 @@ public class TaskController {
             if (updatedTask == null) {
                 throw new RuntimeException("Request body is null");
             }
-            if (updatedTask.getTitle() == null) {
-                throw new RuntimeException("Title cannot be null");
+            if (updatedTask.getTitle() != null) {
+                existingTask.setTitle(updatedTask.getTitle());
             }
-            existingTask.setTitle(updatedTask.getTitle());
-            existingTask.setCompleted(updatedTask.isCompleted());
+            existingTask.setCompleted(updatedTask.isCompleted()); // Always set completed
             return taskRepository.save(existingTask);
         } else {
             throw new RuntimeException("Task not found");
