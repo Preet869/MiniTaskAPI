@@ -123,5 +123,5 @@ Feel free to fork this repository, submit issues, or open pull requests. Contrib
 License
 This project is licensed under the MIT License—see the LICENSE file for details.
 Contact
-Created by Preet—connect with me on LinkedIn or email at your-email@example.com.
+Created by Preet—connect with me on [LinkedIn](https://www.linkedin.com/in/preet-dhillon-09b174270/) or email at preet_231@icloud.
 
