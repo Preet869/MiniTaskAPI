@@ -25,6 +25,7 @@ function App() {
       setTitle("");
   }
 
+  
   function toggleCompleted(id, currentCompleted) {
       const updatedTask = { completed: !currentCompleted };
       fetch(`http://localhost:8081/tasks/${id}`, {
@@ -38,6 +39,7 @@ function App() {
       .catch(error => console.error('Toggle Error:', error));
   }
 
+  
   function startEdit(task) {
       setEditingId(task.id);
       setEditTitle(task.title);
