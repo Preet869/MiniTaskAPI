@@ -110,7 +110,7 @@ Why This Project?
 
 Learning: Demonstrates full-stack development, from React state management to Spring Boot API design.
 Portfolio: Showcases modern UI design and backend integration for job applications or LinkedIn.
-Scalability: Easily extendable (e.g., add persistent storage, user authentication).
+Scalability: Easily extendable (e.g., add persistent storage).
 
 Future Improvements
 
