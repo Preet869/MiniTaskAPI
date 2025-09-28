@@ -17,7 +17,6 @@ React.js: Dynamic, component-based UI.
 JavaScript Fetch API: HTTP requests to the backend.
 CSS: Custom styles for a polished, card-based design.
 
-
 Backend:
 Spring Boot (Java): RESTful API for CRUD operations.
 H2 Database: In-memory storage for tasks.
