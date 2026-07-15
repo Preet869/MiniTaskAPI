@@ -2,10 +2,6 @@
 To-Do List
 A full-stack web application for managing tasks with a modern, card-based interface. Built with React.js for the frontend and Spring Boot (Java) for the backend, this app allows users to create, edit, delete, and mark tasks as complete, with data persisted in an H2 database.
 Features
-
-
-
-
 Add Tasks: Create new tasks with a title (limited to 100 characters).
 Edit Tasks: Modify existing task titles inline.
 Delete Tasks: Remove tasks with a single click.
