@@ -20,15 +20,11 @@ Backend:
 Spring Boot (Java): RESTful API for CRUD operations.
 H2 Database: In-memory storage for tasks.
 
-
 Tools:
 Node.js & npm: React app runtime and dependency management.
 Maven: Spring Boot build and dependency management.
 
-
-
 Prerequisites
-
 Node.js (v16 or higher): Download
 Java (JDK 17 or higher): Download
 Maven: Download
@@ -40,15 +36,12 @@ Clone the Repository:
 git clone https://github.com/your-username/to-do-list.git
 cd to-do-list
 
-
 Backend Setup:
 
 Navigate to the backend directory (e.g., minitaskapi):cd minitaskapi
 
-
 Install dependencies and run the Spring Boot app:mvn clean install
 mvn spring-boot:run
-
 
 The backend runs on http://localhost:8081.
 (Optional) Access the H2 console at http://localhost:8081/h2-console (JDBC URL: jdbc:h2:mem:testdb, username: sa, no password).
