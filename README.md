@@ -46,7 +46,6 @@ mvn spring-boot:run
 The backend runs on http://localhost:8081.
 (Optional) Access the H2 console at http://localhost:8081/h2-console (JDBC URL: jdbc:h2:mem:testdb, username: sa, no password).
 
-
 Frontend Setup:
 
 Open a new terminal and navigate to the frontend directory (e.g., task-manager):cd task-manager
