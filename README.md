@@ -11,10 +11,6 @@ Persistent Storage: Tasks saved in an H2 in-memory database during runtime.
 
 Technologies
 
-
-
-
-
 Frontend:
 React.js: Dynamic, component-based UI.
 JavaScript Fetch API: HTTP requests to the backend.
