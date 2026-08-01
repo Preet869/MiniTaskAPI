@@ -50,11 +50,8 @@ The backend runs on http://localhost:8081.
 Frontend Setup:
 
 Open a new terminal and navigate to the frontend directory (e.g., task-manager):cd task-manager
-
-
 Install dependencies and start the React app:npm install
 npm start
-
 
 The frontend runs on http://localhost:3000.
 
