@@ -55,8 +55,6 @@ npm start
 
 The frontend runs on http://localhost:3000.
 
-
-
 Usage
 
 Open http://localhost:3000 in your browser.
