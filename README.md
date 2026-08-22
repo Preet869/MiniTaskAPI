@@ -9,6 +9,8 @@ Mark Complete: Toggle task completion with checkboxes, visually indicated by a s
 Modern UI: Sleek card layout with hover effects, centered design, and a coral-themed background.
 Persistent Storage: Tasks saved in an H2 in-memory database during runtime.
 
+
+
 Technologies
 Frontend:
 React.js: Dynamic, component-based UI.
